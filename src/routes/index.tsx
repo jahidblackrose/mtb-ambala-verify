@@ -1,24 +1,41 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link2Off } from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+/**
+ * The app has a single entry: /v/<linkToken>. Any other path — including / —
+ * shows the invalid / expired link screen (same as the router's 404 screen).
+ */
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "MTB Customer Verification — গ্রাহক যাচাই" },
+      {
+        name: "description",
+        content: "Open your one-time verification link (/v/…) to start the MTB customer verification.",
+      },
+      { property: "og:title", content: "MTB Customer Verification — গ্রাহক যাচাই" },
+      { property: "og:description", content: "Open your one-time verification link to start." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
+  component: InvalidEntry,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function InvalidEntry() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="mx-auto flex h-[100dvh] w-full max-w-[480px] flex-col items-center justify-center gap-4 bg-background px-6 text-center">
+      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-amber-500/10">
+        <Link2Off className="h-16 w-16 text-amber-500" aria-hidden />
+      </div>
+      <h1 className="text-xl font-bold text-foreground">লিংকটির মেয়াদ শেষ বা সঠিক নয়</h1>
+      <h2 className="text-lg font-semibold text-foreground">This link has expired or is invalid</h2>
+      <p className="max-w-xs text-sm text-muted-foreground">
+        অনুগ্রহ করে নতুন লিংক নিন। / Please ask for a new link.
+      </p>
+      <Link to="/v" className="text-xs text-muted-foreground underline">
+        /v
+      </Link>
     </div>
   );
 }
