@@ -83,7 +83,7 @@ export function useFaceLiveness(video: HTMLVideoElement | null, active: boolean)
 
           const faces = result.faceLandmarks ?? [];
           let faceFound = false;
-          if (faces.length === 1) {
+          if (faces.length === 1 && faces[0]) {
             const pts = faces[0];
             const xs = pts.map((p) => p.x);
             const ys = pts.map((p) => p.y);
