@@ -68,7 +68,8 @@ export function CameraScreen() {
   }
 
   const fallbackMode = liveness.modelError && config.allowLivenessFallback;
-  const canCapture = !capturing && (liveness.blinkDetected || (fallbackMode && liveness.faceFound));
+  // Manual capture as soon as a face is in frame; a blink auto-captures.
+  const canCapture = !capturing && (liveness.faceFound || fallbackMode);
 
   return (
     <div className="relative flex flex-1 flex-col bg-black">
