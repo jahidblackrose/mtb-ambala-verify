@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from "react";
 import { apiPost } from "@/api/client";
 import type { DetailsData, FaceData, SessionData, SendOtpData, TermsData } from "@/api/types";
 import { translate, type Lang, type TFn } from "@/i18n";
@@ -192,5 +192,3 @@ export function FlowProvider({
 
   return <FlowContext.Provider value={value}>{children}</FlowContext.Provider>;
 }
-
-import { useState } from "react";
