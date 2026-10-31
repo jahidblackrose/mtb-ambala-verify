@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Globe } from "lucide-react";
-import mtbLogo from "@/assets/mtb-logo.png.asset.json";
+import mtbLogo from "@/assets/mtb-logo-tag.png.asset.json";
 import mtbSwoosh from "@/assets/mtb-swoosh.png.asset.json";
 import { config } from "@/config";
 import { useFlow } from "@/flow/FlowProvider";
