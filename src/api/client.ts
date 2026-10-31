@@ -66,7 +66,7 @@ async function singleCall<T>(name: ApiName, body: unknown, opts: CallOptions, co
       "X-Client-Platform": detectPlatform(),
       "Accept-Language": opts.lang,
     };
-    if (opts.accessToken) headers.Authorization = `Bearer ${opts.accessToken}`;
+    if (opts.accessToken) headers["Authorization"] = `Bearer ${opts.accessToken}`;
 
     const res = await fetch(endpointPath(name), {
       method: "POST",
