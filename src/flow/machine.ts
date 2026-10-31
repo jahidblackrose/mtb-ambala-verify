@@ -42,6 +42,7 @@ export interface FlowState {
   lastAction: string | null;
   errorMessage: string | null;
   apiMessage: string | null;
+  actionBlocked: boolean;
 }
 
 export const initialState: FlowState = {

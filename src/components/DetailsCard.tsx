@@ -1,5 +1,5 @@
 import { useFlow } from "@/flow/FlowProvider";
-import { useLanguageAwareName } from "@/screens/useLanguageAwareName";
+import { useLanguageAwareName } from "@/hooks/useLanguageAwareName";
 
 /** Read-only label/value rows; text selection and long-press are disabled. */
 export function DetailsCard() {
