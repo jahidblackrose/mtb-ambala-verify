@@ -12,7 +12,8 @@ export interface LivenessState {
  * The library is imported dynamically so it never enters the SSR graph.
  *
  * Blink: eyeBlinkLeft/Right go above 0.5 and back below 0.2 within 10 s.
- * Face: exactly one face, roughly centred, box >= 35% of the frame width.
+ * Face: exactly one face, roughly inside the guide oval — a generous box
+ * (>= 22% of frame width) so users don't have to lean in precisely.
  */
 export function useFaceLiveness(video: HTMLVideoElement | null, active: boolean): LivenessState {
   const [state, setState] = useState<LivenessState>({ faceFound: false, blinkDetected: false, modelError: false });
@@ -92,7 +93,8 @@ export function useFaceLiveness(video: HTMLVideoElement | null, active: boolean)
             const boxW = maxX - minX;
             const cx = (minX + maxX) / 2;
             const cy = (minY + maxY) / 2;
-            faceFound = boxW >= 0.35 && cx > 0.2 && cx < 0.8 && cy > 0.15 && cy < 0.85;
+            // Generous bounds so a normal arm's-length selfie counts.
+            faceFound = boxW >= 0.22 && cx > 0.15 && cx < 0.85 && cy > 0.08 && cy < 0.8;
           }
 
           let blink = blinkDetectedRef.current;
