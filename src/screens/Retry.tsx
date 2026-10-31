@@ -7,8 +7,11 @@ import { useFlow } from "@/flow/FlowProvider";
 export function RetryScreen() {
   const { state, dispatch, t } = useFlow();
 
-  const tips = [t("verify.tip1"), t("verify.tip2"), t("verify.tip3")];
-  const icons: LucideIcon[] = [Lightbulb, Smile, Glasses];
+  const items: { tip: string; Icon: LucideIcon }[] = [
+    { tip: t("verify.tip1"), Icon: Lightbulb },
+    { tip: t("verify.tip2"), Icon: Smile },
+    { tip: t("verify.tip3"), Icon: Glasses },
+  ];
 
   return (
     <>
