@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AppBar } from "@/components/AppBar";
 import { DevPanel } from "@/components/DevPanel";
 import { InactivityDialog } from "@/components/InactivityDialog";
-import { MockRibbon } from "@/components/MockRibbon";
 import { SessionTimer } from "@/components/SessionTimer";
 import { StepProgress } from "@/components/StepProgress";
 import { apiPost } from "@/api/client";
@@ -161,7 +160,6 @@ function FlowShell() {
         {screen}
       </main>
 
-      <MockRibbon />
       <DevPanel open={devOpen} onClose={() => setDevOpen(false)} />
       {warnOpen && (
         <InactivityDialog
