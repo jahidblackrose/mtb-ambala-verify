@@ -11,8 +11,8 @@ export function MobileScreen() {
     <>
       <div className="flex flex-1 flex-col items-center px-4 py-6">
         <div className="w-full rounded-2xl border border-border bg-card p-6 text-center shadow-sm">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-magenta/10">
-            <Smartphone className="h-8 w-8 text-brand-magenta" aria-hidden />
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary/10">
+            <Smartphone className="h-8 w-8 text-brand-primary" aria-hidden />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("mobile.intro")}</p>
           <p className="mt-1 text-xs text-muted-foreground/80">{t("mobile.customerMobile")}</p>

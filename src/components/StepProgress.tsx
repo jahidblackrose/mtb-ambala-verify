@@ -31,7 +31,7 @@ export function StepProgress() {
                   done
                     ? "border-brand-green bg-brand-green text-white"
                     : current
-                      ? "border-brand-magenta bg-brand-magenta text-white"
+                      ? "border-brand-primary bg-brand-primary text-white"
                       : "border-border bg-background text-muted-foreground"
                 }`}
               >
@@ -39,7 +39,7 @@ export function StepProgress() {
               </div>
               <span
                 className={`truncate text-center text-[10px] leading-tight ${
-                  current ? "font-semibold text-brand-magenta" : done ? "text-brand-green" : "text-muted-foreground"
+                  current ? "font-semibold text-brand-primary" : done ? "text-brand-green" : "text-muted-foreground"
                 }`}
               >
                 {t(key)}

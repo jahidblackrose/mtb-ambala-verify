@@ -116,7 +116,7 @@ export function DevPanel({ open, onClose }: { open: boolean; onClose: () => void
                 setFaceResultOverride(r === "none" ? null : (r as "MATCHED" | "RETRY" | "FAILED"));
               }}
               className={`rounded-full px-3 py-2 text-xs font-medium ${
-                face === r ? "bg-brand-magenta text-white" : "border border-border text-foreground"
+                face === r ? "bg-brand-primary text-white" : "border border-border text-foreground"
               }`}
             >
               {r}

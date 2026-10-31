@@ -59,7 +59,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-primary: var(--brand-primary);
   --color-brand-purple: var(--brand-purple);
   --color-brand-green: var(--brand-green);
   --color-brand-charcoal: var(--brand-charcoal);
@@ -106,7 +106,7 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
   /* MTB brand colors, eyedropped from the logo. TODO: confirm with MTB brand guide */
-  --brand-magenta: #E5007D; /* primary buttons, active step, OTP box focus */
+  --brand-primary: #E5007D; /* primary buttons, active step, OTP box focus */
   --brand-purple: #6B2D8C; /* headings, links, secondary emphasis */
   --brand-green: #00A651; /* success, completed steps, tagline */
   --brand-charcoal: #3C3C3B; /* body text */
@@ -116,9 +116,9 @@
   /* Map the shadcn semantics onto the MTB palette. */
   --background: var(--brand-surface);
   --foreground: var(--brand-charcoal);
-  --primary: var(--brand-magenta);
+  --primary: var(--brand-primary);
   --primary-foreground: oklch(1 0 0);
-  --ring: var(--brand-magenta);
+  --ring: var(--brand-primary);
   --border: #E9E2F0;
   --input: #E9E2F0;
   --accent: #F3EBF7;

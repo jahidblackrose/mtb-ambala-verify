@@ -181,7 +181,7 @@ function FlowShell() {
               <button
                 type="button"
                 onClick={() => setExitOpen(false)}
-                className="h-12 rounded-xl bg-brand-magenta font-semibold text-white active:bg-brand-magenta/90"
+                className="h-12 rounded-xl bg-brand-primary font-semibold text-white active:bg-brand-primary/90"
               >
                 {t("dialog.no")}
               </button>
