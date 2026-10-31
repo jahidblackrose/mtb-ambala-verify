@@ -21,6 +21,7 @@ interface FlowContextValue {
   sendOtp: () => Promise<void>;
   submitOtp: (otp: string) => Promise<void>;
   verifyFace: () => Promise<void>;
+  retryLast: () => void;
   busy: boolean;
 }
 
@@ -107,6 +108,7 @@ export function FlowProvider({
       });
       dispatch({ type: "setCorrelationId", id: r.kind === "ok" ? "" : r.correlationId });
       if (r.kind === "ok") {
+        dispatch({ type: "setApiMessage", message: null });
         dispatch({ type: "otpSent", otpExpiresAt: r.data.otpExpiresAt, mobileMasked: r.data.mobileMasked });
         return;
       }
@@ -114,8 +116,14 @@ export function FlowProvider({
         dispatch({ type: "expired" });
         return;
       }
-      if (r.kind === "tooMany" || r.kind === "system") {
-        dispatch({ type: "error", message: null, apiMessage: r.kind === "tooMany" ? r.message : null });
+      if (r.kind === "tooMany") {
+        // Send limit reached: show the message on the mobile screen and disable the button.
+        dispatch({ type: "setApiMessage", message: r.message });
+        dispatch({ type: "blockAction" });
+        return;
+      }
+      if (r.kind === "system") {
+        dispatch({ type: "error", message: null, apiMessage: null });
         return;
       }
       dispatch({ type: "error", message: null, apiMessage: r.message });
@@ -187,6 +195,14 @@ export function FlowProvider({
     sendOtp,
     submitOtp,
     verifyFace,
+    retryLast: () => {
+      const last = stateRef.current.lastAction;
+      if (last === "session") void startSession();
+      else if (last === "sendotp") void sendOtp();
+      else if (last === "face") void verifyFace();
+      else if (last === "verifyotp") dispatch({ type: "setStep", step: "otp" });
+      else dispatch({ type: "setStep", step: "mobile" });
+    },
     busy,
   };
 
