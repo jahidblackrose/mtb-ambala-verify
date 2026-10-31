@@ -59,6 +59,15 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-green: var(--brand-green);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-surface: var(--brand-surface);
+  --color-amber-warn: var(--amber-warn);
+  --animate-otp-shake: otp-shake 0.4s ease-in-out;
+  --animate-splash-slide: splash-slide 1.1s ease-in-out infinite;
+  --animate-check-pop: check-pop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both;
 }
 
 :root {
@@ -95,6 +104,24 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* MTB brand colors, eyedropped from the logo. TODO: confirm with MTB brand guide */
+  --brand-magenta: #E5007D; /* primary buttons, active step, OTP box focus */
+  --brand-purple: #6B2D8C; /* headings, links, secondary emphasis */
+  --brand-green: #00A651; /* success, completed steps, tagline */
+  --brand-charcoal: #3C3C3B; /* body text */
+  --brand-surface: #F7F4F9; /* page background, very light purple tint */
+  --amber-warn: #F59E0B; /* warnings, session timer under 2 min */
+
+  /* Map the shadcn semantics onto the MTB palette. */
+  --background: var(--brand-surface);
+  --foreground: var(--brand-charcoal);
+  --primary: var(--brand-magenta);
+  --primary-foreground: oklch(1 0 0);
+  --ring: var(--brand-magenta);
+  --border: #E9E2F0;
+  --input: #E9E2F0;
+  --accent: #F3EBF7;
 }
 
 .dark {
