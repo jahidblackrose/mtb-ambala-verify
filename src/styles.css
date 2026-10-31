@@ -106,7 +106,7 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
   /* MTB brand colors, eyedropped from the logo. TODO: confirm with MTB brand guide */
-  --brand-primary: #E5007D; /* primary buttons, active step, OTP box focus */
+  --brand-primary: #5B2D8C; /* primary buttons, active step, OTP box focus — deep MTB purple */
   --brand-purple: #6B2D8C; /* headings, links, secondary emphasis */
   --brand-green: #00A651; /* success, completed steps, tagline */
   --brand-charcoal: #3C3C3B; /* body text */
@@ -187,9 +187,9 @@
   }
 }
 
-/* Thin accent gradient: magenta → purple → green (app bar underline, splash, success hero). */
+/* Thin accent gradient: deep purple → MTB purple → green (app bar underline, splash, success hero). */
 @utility bg-brand-gradient {
-  background-image: linear-gradient(135deg, #E5007D 0%, #6B2D8C 55%, #00A651 100%);
+  background-image: linear-gradient(135deg, #5B2D8C 0%, #8A4FC0 55%, #00A651 100%);
 }
 
 @keyframes otp-shake {
