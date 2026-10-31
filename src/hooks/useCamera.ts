@@ -68,5 +68,5 @@ export function useCamera() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stop]);
 
-  return { facing, stream, error, starting, switchCamera, stop };
+  return { facing, stream, error, starting, switchCamera, stop, start };
 }

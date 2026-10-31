@@ -48,7 +48,7 @@ export function DevPanel({ open, onClose }: { open: boolean; onClose: () => void
       }, terms: { tncId: "TNC-TEST-001", version: "1.0", title: "Terms & Conditions", content: "<p>Mock terms.</p>" } });
       dispatch({ type: "tncAccepted", tncId: "TNC-TEST-001" });
     }
-    if (step === "preview" && !state.photo) {
+    if (["preview", "verify", "retry"].includes(step) && !state.photo) {
       // A tiny 1px-ish demo photo so the guard allows preview/verify.
       const img = "R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=";
       dispatch({
