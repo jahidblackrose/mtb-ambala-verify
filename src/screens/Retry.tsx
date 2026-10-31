@@ -26,15 +26,12 @@ export function RetryScreen() {
           </p>
         )}
         <ul className="w-full max-w-xs space-y-2 rounded-2xl border border-border bg-card p-4 shadow-sm">
-          {tips.map((tip, i) => {
-            const Icon = icons[i];
-            return (
+          {items.map(({ tip, Icon }) => (
               <li key={tip} className="flex items-center gap-3 text-sm text-foreground">
                 <Icon className="h-4 w-4 shrink-0 text-brand-green" aria-hidden />
                 {tip}
               </li>
-            );
-          })}
+            ))}
         </ul>
       </div>
       <BottomAction>
