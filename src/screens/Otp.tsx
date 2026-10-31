@@ -3,7 +3,6 @@ import { ActionButton, BottomAction } from "@/components/BottomAction";
 import { OtpInput } from "@/components/OtpInput";
 import { useFlow } from "@/flow/FlowProvider";
 import { useCountdown } from "@/hooks/useCountdown";
-import { isSystemKind } from "@/api/status";
 
 const RESEND_COOLDOWN_S = 60;
 
@@ -119,5 +118,3 @@ export function OtpScreen() {
     </>
   );
 }
-
-export { isSystemKind };
