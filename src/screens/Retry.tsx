@@ -1,4 +1,4 @@
-import { CameraOff, Lightbulb, Glasses, Smile } from "lucide-react";
+import { CameraOff, Lightbulb, Glasses, Smile, type LucideIcon } from "lucide-react";
 import { ActionButton, BottomAction } from "@/components/BottomAction";
 import { revokeObjectUrl } from "@/lib/image";
 import { useFlow } from "@/flow/FlowProvider";
@@ -8,7 +8,7 @@ export function RetryScreen() {
   const { state, dispatch, t } = useFlow();
 
   const tips = [t("verify.tip1"), t("verify.tip2"), t("verify.tip3")];
-  const icons = [Lightbulb, Smile, Glasses];
+  const icons: LucideIcon[] = [Lightbulb, Smile, Glasses];
 
   return (
     <>

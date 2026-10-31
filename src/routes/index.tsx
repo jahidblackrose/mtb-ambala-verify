@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Link2Off } from "lucide-react";
 
 /**
@@ -33,9 +33,6 @@ function InvalidEntry() {
       <p className="max-w-xs text-sm text-muted-foreground">
         অনুগ্রহ করে নতুন লিংক নিন। / Please ask for a new link.
       </p>
-      <Link to="/v" className="text-xs text-muted-foreground underline">
-        /v
-      </Link>
     </div>
   );
 }

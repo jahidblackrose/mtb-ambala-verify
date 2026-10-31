@@ -76,7 +76,7 @@ export function OtpScreen() {
             {t("otp.sentTo")} <span className="font-semibold text-foreground">{state.mobileMasked}</span>
           </p>
           <div className="mt-5">
-            <OtpInput value={otp} onChange={setOtp} onComplete={(v) => void onSubmit(v)} shake={shake} disabled={tooMany} />
+            <OtpInput value={otp} onChange={setOtp} onComplete={() => void onSubmit()} shake={shake} disabled={tooMany} />
           </div>
           <p className="mt-3 text-center text-xs text-muted-foreground">{t("otp.helper")}</p>
           <p className="mt-2 text-center text-xs font-medium tabular-nums" aria-live="polite">
