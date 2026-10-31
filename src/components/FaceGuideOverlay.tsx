@@ -14,14 +14,9 @@ export function FaceGuideOverlay() {
           style={{ boxShadow: "0 0 0 9999px rgba(10, 8, 16, 0.55)" }}
         />
       </div>
-      <div className="absolute inset-x-0 top-20 flex flex-col items-center gap-2 px-6">
-        <p className="text-center text-sm font-medium text-white drop-shadow">
-          {t("camera.instruction")}
-        </p>
-        <p className="text-center text-xs text-white/70 drop-shadow">
-          {t("camera.keepFaceInside")}
-        </p>
-      </div>
+      <p className="absolute inset-x-0 top-20 px-6 text-center text-sm font-medium text-white drop-shadow">
+        {t("camera.instruction")}
+      </p>
       <Camera className="absolute inset-x-0 top-6 mx-auto h-6 w-6 text-white/60" aria-hidden />
     </div>
   );
