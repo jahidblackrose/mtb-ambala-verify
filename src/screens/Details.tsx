@@ -56,6 +56,13 @@ export function DetailsScreen() {
     if (details.error === "expired" || terms.error === "expired") dispatch({ type: "expired" });
   }, [details.error, terms.error, dispatch]);
 
+  // Push the loaded details + terms into the flow state once both are in.
+  useEffect(() => {
+    if (details.data && terms.data) {
+      dispatch({ type: "detailsLoaded", details: details.data, terms: terms.data });
+    }
+  }, [details.data, terms.data, dispatch]);
+
   const onAccept = () => {
     if (!terms.data || !accepted) return;
     dispatch({ type: "tncAccepted", tncId: terms.data.tncId });
