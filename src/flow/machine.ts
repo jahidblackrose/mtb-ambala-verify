@@ -67,6 +67,7 @@ export const initialState: FlowState = {
   lastAction: null,
   errorMessage: null,
   apiMessage: null,
+  actionBlocked: false,
 };
 
 export type FlowAction =
@@ -87,6 +88,8 @@ export type FlowAction =
   | { type: "error"; message: string | null; apiMessage: string | null }
   | { type: "setLastAction"; action: string | null }
   | { type: "setCorrelationId"; id: string }
+  | { type: "setApiMessage"; message: string | null }
+  | { type: "blockAction" }
   | { type: "wipe" };
 
 /** Guards: no camera without accepted terms, no verifying without a photo. */
@@ -155,6 +158,10 @@ export function flowReducer(state: FlowState, action: FlowAction): FlowState {
       return { ...state, lastAction: action.action };
     case "setCorrelationId":
       return { ...state, lastCorrelationId: action.id };
+    case "setApiMessage":
+      return { ...state, apiMessage: action.message };
+    case "blockAction":
+      return { ...state, actionBlocked: true };
     case "wipe":
       return {
         ...state,
