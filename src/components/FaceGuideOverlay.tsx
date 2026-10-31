@@ -6,15 +6,22 @@ export function FaceGuideOverlay() {
   const { t } = useFlow();
   return (
     <div className="pointer-events-none absolute inset-0 z-10">
-      <div className="absolute inset-0 flex items-center justify-center">
+      {/* Oval sits slightly above centre — faces land there when the camera
+          fills the screen and the capture button takes the bottom space. */}
+      <div className="absolute inset-0 flex items-center justify-center pb-[18%]">
         <div
-          className="h-[68vw] max-h-[420px] w-[52vw] max-w-[320px] rounded-[50%] border-2 border-white/70"
+          className="h-[64vw] max-h-[400px] w-[50vw] max-w-[300px] rounded-[50%] border-2 border-white/70"
           style={{ boxShadow: "0 0 0 9999px rgba(10, 8, 16, 0.55)" }}
         />
       </div>
-      <p className="absolute inset-x-0 bottom-24 text-center text-sm font-medium text-white drop-shadow">
-        {t("camera.instruction")}
-      </p>
+      <div className="absolute inset-x-0 top-20 flex flex-col items-center gap-2 px-6">
+        <p className="text-center text-sm font-medium text-white drop-shadow">
+          {t("camera.instruction")}
+        </p>
+        <p className="text-center text-xs text-white/70 drop-shadow">
+          {t("camera.keepFaceInside")}
+        </p>
+      </div>
       <Camera className="absolute inset-x-0 top-6 mx-auto h-6 w-6 text-white/60" aria-hidden />
     </div>
   );
