@@ -100,7 +100,7 @@ export function OtpScreen() {
           onClick={onResend}
           disabled={resendDisabled}
           className={`mx-auto h-12 rounded-xl px-4 text-sm font-semibold disabled:cursor-not-allowed disabled:text-muted-foreground ${
-            expired && !resendDisabled ? "text-brand-magenta underline" : "text-brand-purple"
+            expired && !resendDisabled ? "text-brand-primary underline" : "text-brand-purple"
           }`}
         >
           {cooldown > 0 ? t("otp.resendIn", { n: cooldown }) : t("otp.resend")}

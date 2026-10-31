@@ -23,7 +23,7 @@ export function ActionButton({ variant = "primary", loading, className, children
       disabled={disabled || loading}
       className={`inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl text-base font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 ${
         variant === "primary"
-          ? "bg-brand-magenta text-white shadow-sm active:bg-brand-magenta/90"
+          ? "bg-brand-primary text-white shadow-sm active:bg-brand-primary/90"
           : "border border-brand-purple bg-card text-brand-purple active:bg-brand-purple/10"
       } ${className ?? ""}`}
     >

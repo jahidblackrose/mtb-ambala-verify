@@ -59,7 +59,7 @@ export function CameraScreen() {
         <button
           type="button"
           onClick={() => void start(facing)}
-          className="mt-2 h-12 rounded-xl bg-brand-magenta px-6 font-semibold text-white active:bg-brand-magenta/90"
+          className="mt-2 h-12 rounded-xl bg-brand-primary px-6 font-semibold text-white active:bg-brand-primary/90"
         >
           {t("details.retry")}
         </button>

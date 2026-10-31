@@ -25,7 +25,7 @@ export function InactivityDialog({
           <button
             type="button"
             onClick={onStay}
-            className="h-12 rounded-xl bg-brand-magenta font-semibold text-white active:bg-brand-magenta/90"
+            className="h-12 rounded-xl bg-brand-primary font-semibold text-white active:bg-brand-primary/90"
           >
             {t("dialog.no")}
           </button>

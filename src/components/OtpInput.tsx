@@ -83,7 +83,7 @@ export function OtpInput({
               }
             }}
             onFocus={(e) => e.target.select()}
-            className="h-14 w-12 rounded-xl border border-input bg-background text-center text-2xl font-bold text-foreground transition-colors focus:border-brand-magenta focus:outline-none focus:ring-2 focus:ring-brand-magenta/30 disabled:opacity-50"
+            className="h-14 w-12 rounded-xl border border-input bg-background text-center text-2xl font-bold text-foreground transition-colors focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 disabled:opacity-50"
           />
         ))}
       </div>
